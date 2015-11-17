@@ -36,7 +36,6 @@ app.put('/products', function (req, res, next) {
 
 
 app.delete('/products', function (req, res, next) {
-    // console.log(req.query.id);
     products.remove({ "_id": mongojs.ObjectId(req.query.id) }, function (err, result) {
         if (err) res.send(err);
         else res.send(result);
