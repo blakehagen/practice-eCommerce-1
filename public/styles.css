@@ -8,15 +8,38 @@ html, body {
     margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+     font-family: "Myriad Set Pro", sans-serif;
+     margin: 0;
+}
+
 h1 {
-    font-family: "Myriad Set Pro", sans-serif;
-    font-size: 44px;
+    font-size: 30px;
     text-align: center;
 }
 
+h5 {
+    font-size: 14px;
+    text-align: center;
+}
+
+h6 {
+    font-size: 13px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 .row {
-    margin: 0 auto;
-    width: 50%;
+    margin: 20px auto;
+    width: 40%;
     /*border: 1px solid lawngreen;*/
     text-align: center;
     vertical-align: top;
@@ -28,4 +51,45 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 20px;
     display: inline-block;
+    padding: 10px 0;
+}
+
+.title {
+    width: 70%;
+    /*border: 1px solid red;*/
+    display: inline-block;
+}
+
+.link {
+    margin-top: 10px;
+    /*border: 1px solid blue;*/
+    float: right;
+}
+
+.admin-row {
+    margin: 0 auto;
+    width: 90%;
+    /*border: 1px solid rebeccapurple;*/
+    height: 45px;
+    text-align: center;
+}
+
+input {
+    width: 130px;
+    vertical-align: top;
+    padding-left: 10px;
+    margin: 10px 0px;
+}
+
+.left {
+    text-align: left;
+}
+
+.item {
+    height: 100%;
+    display: inline-block;
+    /*border: 1px solid orange;*/
+    vertical-align: top;
+    padding: 0 10px;
+    line-height: 40px;  
 }

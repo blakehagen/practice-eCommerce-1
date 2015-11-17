@@ -1,1 +1,90 @@
-This is the admin template
+<div class="row">
+    <div class="title">
+        <h1>Admin Page</h1>
+    </div>
+    <div class="link">
+        <a href="#/"><h6>Home</h6></a>
+    </div>
+</div>
+
+<div class="admin-row small">
+    <button ng-click="newButton()">New Product</button>
+    <button ng-click="editButton()">Edit Product</button>
+    <button ng-click="deleteButton()">Delete Product</button>
+    <button ng-click="productDetailsButton()">Get Product IDs</button>
+</div>
+
+<div class="admin-row" ng-show="newProductRow">
+    <div class="item">
+        <h6 class="left">Enter New Product Details:</h6>
+    </div>
+    <div class="item">
+        <input type="text" placeholder="Team ..." ng-model="teamNew">
+    </div>
+    <div class="item">
+        <input type="text" placeholder="Color ..." ng-model="colorNew">
+    </div>
+    <div class="item">
+        <input type="text" placeholder="Price ..." ng-model="priceNew">
+    </div>
+    <div class="item">
+        <button>Submit</button>
+    </div>
+</div>
+
+<div class="admin-row" ng-show="editProductRow">
+    <div class="item">
+        <h6 class="left">Edit Product:</h6>
+    </div>
+    <div class="item">
+        <input type="text" placeholder="Product ID ..." ng-model="idEdit">
+    </div>
+    <div class="item">
+        <input type="text" placeholder="Team ..." ng-model="teamNew">
+    </div>
+    <div class="item">
+        <input type="text" placeholder="Color ..." ng-model="colorNew">
+    </div>
+    <div class="item">
+        <input type="text" placeholder="Price ..." ng-model="teamNew">
+    </div>
+    <div class="item">
+        <button>Submit</button>
+    </div>
+</div>
+
+<div class="admin-row" ng-show="deleteProductRow">
+    <div class="item">
+        <h6 class="left">Delete Product:</h6>
+    </div>
+    <div class="item">
+        <input type="text" placeholder="Product ID ..." ng-model="idEdit">
+    </div>
+    <div class="item">
+        <button>Submit</button>
+    </div>
+</div>
+
+<div class="admin-row" ng-show="idRow">
+    <div class="item">
+        <h6>Get Product Details:</h6>
+    </div>
+    <div class="item">
+        <button ng-click="get()">Get Details</button>
+    </div>
+</div>
+
+<div class="admin-row left" ng-repeat="hat in products" ng-show="productDetails">
+    <div class="item">
+        <h6 class="center">Product ID:&nbsp;&nbsp; {{hat._id}}</h6>
+    </div>
+    <div class="item">
+        <h6 class="">Team:&nbsp;&nbsp; {{hat.team}}</h6>
+    </div>
+    <div class="item">
+        <h6 class="">Color:&nbsp;&nbsp; {{hat.color}}</h6>
+    </div>
+    <div class="item">
+        <h6 class="">Price:&nbsp;&nbsp; {{hat.price}}</h6>
+    </div>
+</div>
