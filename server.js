@@ -44,28 +44,10 @@ app.delete('/products', function (req, res, next) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//where front end lives
+app.use(express.static(__dirname + '/public'));
 
 // set port
-
 var port = process.env.PORT || 3000;
 
 app.listen(port, function () {

@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Myriad Set Pro", sans-serif;
+    font-size: 44px;
+    text-align: center;
+}
+
+.row {
+    margin: 0 auto;
+    width: 50%;
+    /*border: 1px solid lawngreen;*/
+    text-align: center;
+    vertical-align: top;
+}
+
+.products {
+    margin: 10px 12px;
+    width: 37%;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    display: inline-block;
+}
