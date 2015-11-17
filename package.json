@@ -1,0 +1,26 @@
+{
+  "name": "practice-ecommerce-part-one",
+  "version": "1.0.0",
+  "description": "eCommerce Project - Part I =================",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blakehagen/practice-eCommerce-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blakehagen/practice-eCommerce-1/issues"
+  },
+  "homepage": "https://github.com/blakehagen/practice-eCommerce-1",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongojs": "^1.4.1"
+  }
+}
