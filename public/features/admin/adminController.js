@@ -1,6 +1,5 @@
 angular.module('ecommerceApp').controller('adminCtrl', function ($scope, productService) {
 
-
     // Toggle Admin Action Buttons //
     
     $scope.newProductRow = false;
@@ -8,11 +7,13 @@ angular.module('ecommerceApp').controller('adminCtrl', function ($scope, product
     $scope.deleteProductRow = false;
     $scope.idRow = false;
 
+
     $scope.newButton = function () {
         $scope.newProductRow = !$scope.newProductRow;
         $scope.editProductRow = false;
         $scope.deleteProductRow = false;
         $scope.idRow = false;
+        $scope.productDetails = false;
     }
 
     $scope.editButton = function () {
@@ -20,6 +21,7 @@ angular.module('ecommerceApp').controller('adminCtrl', function ($scope, product
         $scope.newProductRow = false;
         $scope.deleteProductRow = false;
         $scope.idRow = false;
+        $scope.productDetails = false;
     }
 
     $scope.deleteButton = function () {
@@ -27,6 +29,7 @@ angular.module('ecommerceApp').controller('adminCtrl', function ($scope, product
         $scope.newProductRow = false;
         $scope.editProductRow = false;
         $scope.idRow = false;
+        $scope.productDetails = false;
     }
 
     $scope.productDetailsButton = function () {
@@ -35,9 +38,10 @@ angular.module('ecommerceApp').controller('adminCtrl', function ($scope, product
         $scope.editProductRow = false;
         $scope.deleteProductRow = false;
     }
+    
+    // // // // // // // // // // // // // // // // // //
 
-
-    // Submit Data to Database //
+    // GET Product Info Details from Database //
 
     $scope.productDetails = false;
 
@@ -46,7 +50,42 @@ angular.module('ecommerceApp').controller('adminCtrl', function ($scope, product
             $scope.products = response;
         })
         $scope.productDetails = !$scope.productDetails;
-    }
+    };
+    
+    // // // // // // // // // // // // // // // // // //
+    
+    // POST New Product //
+
+    $scope.newProduct = function () {
+        $scope.productDetails = false;
+        var newProduct = [{
+            "team": $scope.teamNew,
+            "color": $scope.colorNew,
+            "price": $scope.priceNew
+        }];
+        productService.postNew(newProduct).then(function (response) {
+            console.log(response);
+            $scope.teamNew = '';
+            $scope.colorNew = '';
+            $scope.priceNew = '';
+        })
+    };
+    
+    // // // // // // // // // // // // // // // // // //
+    
+    // DELETE Product //
+
+    $scope.delete = function () {
+        $scope.productDetails = false;
+        var id = $scope.idDelete;
+        console.log(id);
+        productService.deleteProduct(id).then(function (response) {
+            console.log(response);
+            $scope.idDelete = '';
+        })
+    };
+    
+    // // // // // // // // // // // // // // // // // //
 
 
 });

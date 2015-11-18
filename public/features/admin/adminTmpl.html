@@ -28,7 +28,7 @@
         <input type="text" placeholder="Price ..." ng-model="priceNew">
     </div>
     <div class="item">
-        <button>Submit</button>
+        <button ng-click="newProduct()">Submit</button>
     </div>
 </div>
 
@@ -58,10 +58,10 @@
         <h6 class="left">Delete Product:</h6>
     </div>
     <div class="item">
-        <input type="text" placeholder="Product ID ..." ng-model="idEdit">
+        <input type="text" placeholder="Product ID ..." ng-model="idDelete">
     </div>
     <div class="item">
-        <button>Submit</button>
+        <button ng-click="delete()">Submit</button>
     </div>
 </div>
 
