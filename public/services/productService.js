@@ -33,7 +33,7 @@ angular.module('ecommerceApp').service('productService', function ($http, $q) {
     this.editProduct = function (editObj, id) {
         return $http({
             method: 'PUT',
-            url: '/products?id=' + id,
+            url: '/products/' + id,
             dataType: 'json',
             data: editObj
         }).then(function (response) {
@@ -49,7 +49,7 @@ angular.module('ecommerceApp').service('productService', function ($http, $q) {
     this.deleteProduct = function (id) {
         return $http({
             method: 'DELETE',
-            url: '/products?id=' + id,
+            url: '/products/' + id,
             dataType: 'json',
             data: id
         }).then(function (response) {

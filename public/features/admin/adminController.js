@@ -58,11 +58,11 @@ angular.module('ecommerceApp').controller('adminCtrl', function ($scope, product
 
     $scope.newProduct = function () {
         $scope.productDetails = false;
-        var newProduct = [{
+        var newProduct = {
             "team": $scope.teamNew,
             "color": $scope.colorNew,
-            "price": $scope.priceNew
-        }];
+            "price": parseInt($scope.priceNew)
+        };
         productService.postNew(newProduct).then(function (response) {
             console.log(response);
             $scope.teamNew = '';
@@ -73,21 +73,21 @@ angular.module('ecommerceApp').controller('adminCtrl', function ($scope, product
     
     // // // // // // // // // // // // // // // // // //
     
-        // PUT (EDIT) Product //
+    // PUT (EDIT) Product //
 
     $scope.edit = function () {
         $scope.productDetails = false;
         var editObj = {
             "team": $scope.teamEdit,
             "color": $scope.colorEdit,
-            "price": $scope.priceEdit,
+            "price": parseInt($scope.priceEdit)
         };
-        console.log(editObj);
         productService.editProduct(editObj, $scope.idEdit).then(function (response) {
             console.log(response);
-            $scope.teamNew = '';
-            $scope.colorNew = '';
-            $scope.priceNew = '';
+            $scope.idEdit = '';
+            $scope.teamEdit = '';
+            $scope.colorEdit = '';
+            $scope.priceEdit = '';
         })
     };
     
