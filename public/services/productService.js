@@ -1,5 +1,6 @@
 angular.module('ecommerceApp').service('productService', function ($http, $q) {
 
+    // GET
     this.getProducts = function () {
         var deferred = $q.defer();
         $http({
@@ -11,7 +12,8 @@ angular.module('ecommerceApp').service('productService', function ($http, $q) {
         })
         return deferred.promise
     };
-
+    
+    // POST
     this.postNew = function (newProduct) {
         return $http({
             method: 'POST',
@@ -27,9 +29,23 @@ angular.module('ecommerceApp').service('productService', function ($http, $q) {
         })
     };
 
+    // PUT
+    this.editProduct = function (editObj, id) {
+        return $http({
+            method: 'PUT',
+            url: '/products?id=' + id,
+            dataType: 'json',
+            data: editObj
+        }).then(function (response) {
+            console.log(response);
+            return "Product Changed";
+        }, function (error) {
+            console.log(error);
+            return "Error";
+        })
+    };
 
-
-
+    // DELETE
     this.deleteProduct = function (id) {
         return $http({
             method: 'DELETE',

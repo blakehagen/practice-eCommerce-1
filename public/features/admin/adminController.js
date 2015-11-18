@@ -73,6 +73,26 @@ angular.module('ecommerceApp').controller('adminCtrl', function ($scope, product
     
     // // // // // // // // // // // // // // // // // //
     
+        // PUT (EDIT) Product //
+
+    $scope.edit = function () {
+        $scope.productDetails = false;
+        var editObj = {
+            "team": $scope.teamEdit,
+            "color": $scope.colorEdit,
+            "price": $scope.priceEdit,
+        };
+        console.log(editObj);
+        productService.editProduct(editObj, $scope.idEdit).then(function (response) {
+            console.log(response);
+            $scope.teamNew = '';
+            $scope.colorNew = '';
+            $scope.priceNew = '';
+        })
+    };
+    
+    // // // // // // // // // // // // // // // // // //
+    
     // DELETE Product //
 
     $scope.delete = function () {
