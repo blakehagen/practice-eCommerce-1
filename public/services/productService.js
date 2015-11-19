@@ -5,7 +5,7 @@ angular.module('ecommerceApp').service('productService', function ($http, $q) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: '/products'
+            url: '/api/products'
         }).then(function (response) {
             // console.log(response.data);
             deferred.resolve(response.data);
@@ -17,7 +17,7 @@ angular.module('ecommerceApp').service('productService', function ($http, $q) {
     this.postNew = function (newProduct) {
         return $http({
             method: 'POST',
-            url: '/products',
+            url: '/api/products',
             dataType: 'json',
             data: newProduct
         }).then(function (response) {
@@ -33,7 +33,7 @@ angular.module('ecommerceApp').service('productService', function ($http, $q) {
     this.editProduct = function (editObj, id) {
         return $http({
             method: 'PUT',
-            url: '/products/' + id,
+            url: '/api/products/' + id,
             dataType: 'json',
             data: editObj
         }).then(function (response) {
@@ -49,7 +49,7 @@ angular.module('ecommerceApp').service('productService', function ($http, $q) {
     this.deleteProduct = function (id) {
         return $http({
             method: 'DELETE',
-            url: '/products/' + id,
+            url: '/api/products/' + id,
             dataType: 'json',
             data: id
         }).then(function (response) {

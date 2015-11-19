@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
+var cartSchema = require('../models/carts')
 
 var UserSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    cart: { type: mongoose.Schema.Types.ObjectId, ref: 'Cart' }
+    cart: [cartSchema]
 })
 
 module.exports = mongoose.model('User', UserSchema)

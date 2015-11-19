@@ -11,11 +11,10 @@ module.exports = {
     },
 
     getAll: function (req, res, next) {
-        Product.find({})
-            .exec(function (err, result) {
-                if (err) return res.status(500).send(err);
-                else res.send(result);
-            })
+        Product.find(req.query, function (err, result) {
+            if (err) return res.status(500).send(err);
+            else res.send(result);
+        })
     },
 
     getProduct: function (req, res, next) {

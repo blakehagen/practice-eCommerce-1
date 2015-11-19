@@ -22,11 +22,11 @@ mongoose.connection.once('open', function () {
 });
 
 //PRODCUT ENDPOINTS//
-app.post('/products', productCtrl.create);
-app.get('/products', productCtrl.getAll);
-app.get('/products/:id', productCtrl.getProduct);
-app.put('/products/:id', productCtrl.update);
-app.delete('/products/:id', productCtrl.delete); 
+app.post('/api/products', productCtrl.create);
+app.get('/api/products', productCtrl.getAll);
+app.get('/api/products/:id', productCtrl.getProduct);
+app.put('/apiproducts/:id', productCtrl.update);
+app.delete('/api/products/:id', productCtrl.delete); 
 
 //ORDER ENDPOINTS//
 app.post('/api/order', orderCtrl.create);

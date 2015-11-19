@@ -4,7 +4,6 @@ var ProductSchema = new mongoose.Schema({
     team: { type: String, required: true },
     color: { type: String },
     price: { type: Number, required: true },
-    id: { type: String, required: true }
 })
 
-module.exports = ProductSchema;
+module.exports = mongoose.model('Product', ProductSchema);
