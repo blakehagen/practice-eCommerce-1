@@ -11,7 +11,7 @@ module.exports = {
     },
 
     getAll: function (req, res, next) {
-        Product.find(req.query)
+        Product.find({})
             .exec(function (err, result) {
                 if (err) return res.status(500).send(err);
                 else res.send(result);
